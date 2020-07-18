@@ -40,7 +40,8 @@ group :development do
   gem 'devise', '~> 4.7', '>= 4.7.2'
   gem 'shrine', '~> 3.2', '>= 3.2.1'
   gem 'name_of_person', '~> 1.1', '>= 1.1.1'
-  gem 'acts_as_taggable', '~> 2.0', '>= 2.0.2'
+  gem 'acts-as-taggable-on', '~> 6.0'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
