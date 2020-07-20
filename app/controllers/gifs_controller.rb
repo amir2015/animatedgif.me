@@ -1,6 +1,6 @@
 class GifsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_gif, only: [:show, :edit, :update, :destroy]
+  before_action :set_gif, only: [:edit, :update, :destroy]
 
   # GET /gifs
   # GET /gifs.json
@@ -71,6 +71,6 @@ before_action :authenticate_user!, except: [:index, :show]
 
     # Only allow a list of trusted parameters through.
     def gif_params
-      params.require(:gif).permit(:image,:tag_list)
+      params.require(:gif).permit(:image,:tag_list,:image_remote_url)
     end
 end

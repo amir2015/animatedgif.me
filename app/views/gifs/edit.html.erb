@@ -2,5 +2,6 @@
 
 <%= render 'form', gif: @gif %>
 
+<%= link_to 'Destroy', @gif ,method: :delete , data: {confirm: 'are byou sure?'} %> |
 <%= link_to 'Show', @gif %> |
 <%= link_to 'Back', gifs_path %>
