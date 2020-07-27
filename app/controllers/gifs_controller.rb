@@ -5,7 +5,7 @@ before_action :authenticate_user!, except: [:index, :show]
   # GET /gifs
   # GET /gifs.json
   def index
-    @gifs = Gif.all
+    @gifs = Gif.sorted
   end
 
   # GET /gifs/1
@@ -22,12 +22,15 @@ before_action :authenticate_user!, except: [:index, :show]
   # GET /gifs/1/edit
   def edit
   end
-
+def random
+  @gif = Gif.tagged_with(params[:tag]).order("RANDOM()").first
+  @gif ||= Gif.random
+  render :show
+end
   # POST /gifs
   # POST /gifs.json
   def create
     @gif = current_user.gifs.new(gif_params)
-
     respond_to do |format|
       if @gif.save
         format.html { redirect_to @gif, notice: 'Gif was successfully created.' }

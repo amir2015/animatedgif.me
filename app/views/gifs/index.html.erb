@@ -1,6 +1,6 @@
-<div class="container mx-auto mt-10 flex flex-wrap">
+<div class="container justify-center mx-auto mt-10 flex flex-wrap">
 <% @gifs.each do |gif| %>
-  <div class="w-64 m-4 rounded shadow ">
+  <div class="max-w-xs m-4 rounded shadow p-5 mr-auto">
    <%= link_to image_tag(gif.image_url),gif,class: "mx-auto" %>
  <div class="p-2 text-sm">
 <%= linked_tag_list gif%>

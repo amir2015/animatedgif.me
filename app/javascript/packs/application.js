@@ -20,3 +20,4 @@ require("channels")
 // import "bootstrap";
 // import "./src/application.scss";
 require("stylesheets/application.scss")
+import "controllers"
