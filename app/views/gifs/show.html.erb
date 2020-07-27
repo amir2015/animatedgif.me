@@ -1,0 +1,21 @@
+<div class="w-64 mx-auto mt-10">
+  <%= image_tag @gif.image_url, class: "mx-auto" %>
+
+  <div class="flex justify-between text-xs my-2">
+    <div class="text-gray-700">Uploaded by <%= @gif.user.name %></div>
+    <div>
+    <% if user_signed_in? && current_user == @gif.user %>
+      <%= link_to 'Edit', edit_gif_path(@gif) %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="flex text-xs mt-4 btn-group" data-controller="clipboard">
+    <%= text_field_tag nil, full_gif_url(@gif), data: { target: "clipboard.source" }, class: "fbg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" %>
+    <button data-action="click->clipboard#copy" data-target="clipboard.button" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded ml-2">Copy</button>
+  </div>
+
+  <div class="text-center text-sm mt-4">
+    <%= linked_tag_list @gif %>
+  </div>
+</div>
