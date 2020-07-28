@@ -5,7 +5,7 @@ before_action :authenticate_user!, except: [:index, :show]
   # GET /gifs
   # GET /gifs.json
   def index
-    @gifs = Gif.sorted
+    @gifs = Gif.includes(:tags, :user).sorted
   end
 
   # GET /gifs/1
@@ -17,7 +17,7 @@ before_action :authenticate_user!, except: [:index, :show]
   # GET /gifs/new
   def new
     @gif = Gif.new
-  end
+  end   
 
   # GET /gifs/1/edit
   def edit

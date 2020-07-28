@@ -1,9 +1,11 @@
-<div class="container justify-center mx-auto mt-10 flex flex-wrap">
+<div class="container mx-auto justify-center  mt-10 flex flex-wrap">
 <% @gifs.each do |gif| %>
-  <div class="max-w-xs m-4 rounded shadow p-5 mr-auto">
-   <%= link_to image_tag(gif.image_url),gif,class: "mx-auto" %>
- <div class="p-2 text-sm">
-<%= linked_tag_list gif%>
+  <div class="max-w-xs m-2 rounded shadow ">
+   <%= link_to image_tag(gif.image_url),gif ,class: "mx-auto" %>
+ <div class="p-2 text-center text-sm">
+    <div class="text-xs text-gray-700">Uploaded by  <%= link_to gif.user.name, gif.user %>
+    </div>
+   <%= linked_tag_list gif%>
  </div>
  </div>
 <% end %>
