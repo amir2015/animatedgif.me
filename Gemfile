@@ -40,7 +40,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   gem 'devise', '~> 4.7', '>= 4.7.2'
-  gem 'shrine', '~> 3.2', '>= 3.2.1'
+  gem 'shrine', '~> 3.3'
   gem 'name_of_person', '~> 1.1', '>= 1.1.1'
   gem 'acts-as-taggable-on', '~> 6.0'
 
